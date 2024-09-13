@@ -1,3 +1,4 @@
 #ignore node_modules dirctory and dont track this files
-node_modules/   
+node_modules/ 
+.env  
 #other entries

@@ -3,6 +3,7 @@ const app = express()  //instance ,blueprint(calling express)(it has all functio
 // "/" is a endpoint one who write (client)slash they get the data
 // we have define one end point in api which is backslash when client write backslash after address they get response
 const db=require('./db')
+require('dotenv').config();
 //connect person model
 const Person=require('./models/Person')
 const subject=require('./models/subject')
@@ -30,7 +31,10 @@ const subjectRoutes=require('./Routes/subjectRoutes')
 app.use('/person',personRoutes)
 app.use('/subject',subjectRoutes)
 
-app.listen(3000,()=>{
+
+const PORT=process.env.PORT || 3000
+
+app.listen(PORT,()=>{
     console.log("Listening on port 3000");
 })
 
